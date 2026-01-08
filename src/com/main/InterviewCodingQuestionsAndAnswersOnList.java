@@ -16,6 +16,9 @@ public class InterviewCodingQuestionsAndAnswersOnList {
         listOfEmployeeDetails.add(new Employee(40, "Pramod", 29, 500000));
         listOfEmployeeDetails.add(new Employee(45, "Jani", 33, 470000));
         listOfEmployeeDetails.add(new Employee(67, "Manasa", 28, 200000));
+        listOfEmployeeDetails.add(new Employee(41, "Anand", 33, 930000));
+        listOfEmployeeDetails.add(new Employee(23, "Hari", 31, 670000));
+        listOfEmployeeDetails.add(new Employee(22, "Juli", 28, 200000));
 
         //Print the latest 3rd height salary Employee details
         Optional<Employee> thirdHeightEmpDetails =  listOfEmployeeDetails.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(2).findFirst();
@@ -40,6 +43,11 @@ public class InterviewCodingQuestionsAndAnswersOnList {
         List<String> removeDuplicateValues = listOfStringsValues.stream().distinct().toList();
         System.out.println("Remove the duplicate values from the list of strings");
         System.out.println(removeDuplicateValues);
+
+        //How to get the latest 5 records from the Employee details based on salary
+        List<Employee>  latestFiveRecords = listOfEmployeeDetails.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).limit(5).toList();
+        System.out.println("Display the latest five records from the Employee list based on Salary");
+        System.out.println(latestFiveRecords);
 
     }
 }

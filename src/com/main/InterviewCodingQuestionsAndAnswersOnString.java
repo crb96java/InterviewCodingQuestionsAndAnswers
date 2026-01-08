@@ -50,6 +50,12 @@ public class InterviewCodingQuestionsAndAnswersOnString {
         System.out.println(name);
         System.out.println();
 
+        //int[] i = {3 4 8 9 11 5} how to print the even numbers using java 8
+        int[] numbers = {3, 4, 8, 9, 11, 5};
+        System.out.println("Print the even numbers from the int array");
+        Arrays.stream(numbers)
+                .filter(n->n%2==0)
+                .forEach(System.out::println);
     }
 
 }
